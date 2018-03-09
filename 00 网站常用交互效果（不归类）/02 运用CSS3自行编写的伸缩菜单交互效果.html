@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<style>
+		html,body,body *{margin:0;padding:0;}
+		.box{float:left;width:200px;border:1px solid #000;}
+		.box label{
+			float:left;
+			display:block;
+			width:200px;
+			height:auto;
+			border-bottom:1px solid #000;
+			overflow:hidden;
+		}
+		.box label:last-child{
+			border-bottom:none;
+		}
+		.box label input{
+			float: left;
+			margin-top:-15px;
+		}
+		.box label h3{
+			width:200px;
+			height:30px;
+			font:14px/30px "microsoft yahei";
+			background:#4260f5;
+			color:#fff;
+			transition:0.5s;
+		}
+		.box label .con{
+			width:200px;
+			height:0px;
+			font-size:18px;
+			overflow:hidden;
+			transition:0.5s;
+		}
+		.box label input:checked + h3{background:red;}
+		.box label input:checked + h3 + .con{height:150px;}
+		</style>
+		
+		<div class="box">
+			<label>
+				<input type="radio" name="tab" checked="checked"/>
+				<h3>标题1</h3>
+				<div class="con">111</div>
+			</label>
+			<label>
+				<input type="radio" name="tab"/>
+				<h3>标题2</h3>
+				<div class="con">222</div>
+			</label>
+			<label>
+				<input type="radio" name="tab"/>
+				<h3>标题3</h3>
+				<div class="con">333</div>
+			</label>
+		</div>
+		
+		
+	</body>
+</html>
