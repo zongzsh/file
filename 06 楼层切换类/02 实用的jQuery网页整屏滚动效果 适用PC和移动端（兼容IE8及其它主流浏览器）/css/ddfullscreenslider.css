@@ -1,0 +1,84 @@
+html.fssopen, html.fssopen body{ /* class added to HTML element when full screen slider is open to hide potential body scrollbars */
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+  	margin: 0;
+	overflow: hidden;
+}
+
+section.dd_fullscreenslider{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+  	z-index: 2000;
+	font-size: 16px; /* base font size */
+	visibility: visible;
+	overflow: hidden;
+}
+
+div.slidewrapper{ /* wrapper DIV that surrounds the ARTICLE elements inside .dd_fullscreenslider */
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-transform: translate3d(0, 0, 0); /* to prevent flickering in iOS */
+	-moz-transition: -moz-transform 0.5s; /* actual duration controlled by script */
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+ul.fssnav{ /* UL list dynamically added by script for Slider navigation */
+	list-style: none;
+  	padding: 0;
+ 	margin: 0;
+	position: fixed;
+	top: 50%; /* vertically center menu */
+	right: 20px; /* distance from right edge of screen */
+	transform: translateY(-50%); /* vertically center menu */
+}
+
+ul.fssnav li{
+  margin-bottom: 15px;
+}
+
+ul.fssnav li a{
+	text-decoration: none;
+  	border: 1px solid white; /* border color of nav links */
+  	border-radius: 50%;
+  	width: 15px; /* dimensions of nav links */
+  	height: 15px;
+  	display: block;
+	position: relative;
+  	text-indent: -500px;
+	outline: none;
+  	overflow: hidden;
+}
+
+ul.fssnav li.selected a{
+  	background:#fff;
+}
+
+section.dd_fullscreenslider article.slide{ /* CSS for each slide */
+	width: 100%;
+  	height: 100%;
+	display: block;
+	font-family: 'Lato', sans-serif; /* Use google font */
+	font-size: 1.2em;
+	line-height: 2em;
+	color: white;
+	overflow: hidden;
+  	-webkit-box-sizing: border-box; /* include padding/ border as part of declared menu width */
+  	-moz-box-sizing: border-box;
+	z-index: 1000;
+  	background: #E56464;
+	-webkit-transform: translate3d(0, 0, 0); /* to prevent flickering in iOS */
+}
+
+section.dd_fullscreenslider article.slide .scrollable{overflow:auto;}
+section.dd_fullscreenslider article.slide:nth-of-type(2){background:#22AFE2;}
+section.dd_fullscreenslider article.slide:nth-of-type(3){background:#88D332;}
+section.dd_fullscreenslider article.slide:nth-of-type(4){background:#A36400;}
