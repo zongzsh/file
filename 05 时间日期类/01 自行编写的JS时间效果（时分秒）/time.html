@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{color:#000;}
+body{margin:0px; padding:0px;}
+.clearfix:after{content:"";display:block;clear:both;}
+.clearfix{*zoom:1;}
+p{text-align:center; font:bold 30px '黑体';}
+</style>
+<script>
+window.onload = function(){
+	var oPara = document.getElementsByTagName('p')[0];
+	var oImg = oPara.getElementsByTagName('img');
+	var timer = null;
+	
+	timer = setInterval(time,1000);
+	time();
+	function time(){
+		var myTime = new Date();
+		var iHours = myTime.getHours();
+		var iMinus = myTime.getMinutes();
+		var iSecon = myTime.getSeconds();
+		var str = iHours+' '+toTwo(iMinus)+' '+toTwo(iSecon);
+		
+		for(var i=0;i<oImg.length;i++){
+			oImg[i].src = 'img/'+str.charAt(i)+'.JPG';
+			if(str.charAt(2)==' '&&str.charAt(5)==' '){
+				oImg[2].src = 'img/colon1.JPG';	
+				oImg[5].src = 'img/colon1.JPG';
+			}
+		}
+	}
+	
+	fn(oImg[2]);
+	fn(oImg[5]);
+	function fn(aImg){
+		var onoff = true;
+		aImg.timer = setInterval(function(){
+			if(onoff){
+				aImg.src = 'img/colon1.JPG';
+				onoff = false;
+			}else{
+				aImg.src = 'img/colon0.JPG';
+				onoff = true;	
+			}
+		},500)
+	}
+	
+	
+	function toTwo(n){return n < 10 ?  '0' + n : '' + n;}
+	function doMove ( obj, attr, dir, target, endFn ){
+		dir = parseInt(getStyle( obj, attr )) < target ? dir : -dir;
+		clearInterval( obj.timer );
+		obj.timer = setInterval(function () {
+			var speed = parseInt(getStyle( obj, attr )) + dir;			// 步长			
+			if ( speed > target && dir > 0 ||  speed < target && dir < 0  ) {
+				speed = target;
+			}
+			obj.style[attr] = speed + 'px';		
+			if ( speed == target ) {
+				clearInterval( obj.timer );
+				endFn && endFn();				
+			}
+		}, 100);
+	}
+	function getStyle ( obj, attr ) { return obj.currentStyle?obj.currentStyle[attr] : getComputedStyle( obj )[attr]; }
+}
+</script>
+</head>
+<body>
+	
+	<p>
+		<img src="img2/0.JPG">
+		<img src="img2/0.JPG">
+		<img src="img2/colon1.JPG">
+		<img src="img2/0.JPG">
+		<img src="img2/0.JPG">
+		<img src="img2/colon1.JPG">
+		<img src="img2/0.JPG">
+		<img src="img2/0.JPG">
+	</p>
+	
+</body>
+</html>
