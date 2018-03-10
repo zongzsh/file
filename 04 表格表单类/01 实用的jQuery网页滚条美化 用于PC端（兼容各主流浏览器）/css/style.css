@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+.scroll{width:540px;height:240px;margin:0px auto;}
+.infro{height:240px; text-align:right; margin:0 0 20px;}
+.infro .mCSB_scrollTools {right:0; top:0; width:8px; height:240px;}
+.infro .mCSB_dragger {width:8px; left:0px;}
+.infro .mCSB_dragger_bar { width:8px; height:40px; left:0; background:#606162; cursor:pointer; }
+.infro .mCSB_draggerRail { width:1px; overflow:hidden; margin:0 auto; height:240px; background:#606162;}
+.infro .mCustomScrollBox { padding-right:8px; color:#fff;}
+.infro h4{padding-bottom:10px;padding-right:50px;font:100 24px "Microsoft Yahei";color:#b4b4b3;}
+.infro i{display:block;padding-bottom:20px;padding-right:50px;font:100 20px "Microsoft Yahei";color:#b4b4b3;}
+.infro h5{padding-bottom:5px;padding-right:50px;font:100 18px "Microsoft Yahei";color:#b4b4b3;}
+.infro p{padding-right:50px;font:100 13px/22px "Microsoft Yahei";color:#b4b4b3;}
+
+.infro_red .mCSB_dragger_bar{background:red;}
+.infro_red .mCSB_draggerRail{background:red;}
