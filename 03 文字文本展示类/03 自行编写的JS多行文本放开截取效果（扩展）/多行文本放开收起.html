@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style>
+p{width:400px;padding:20px;margin:40px auto 0;border:10px solid #ccc;background:#eee;font-size:16px;font-family:微软雅黑;border-collapse: separate;}
+</style>
+<script>
+	window.onload = function () {
+		var oP = document.getElementsByTagName('p')[0];
+		var oSpan = oP.getElementsByTagName('span')[0];
+		var oA = oP.getElementsByTagName('a')[0];
+		var str = oSpan.innerHTML;
+		var onOff = true;
+			
+		oA.onclick = function () {
+			if ( onOff ) {
+				oSpan.innerHTML = str.substring(0, 18)+'......';
+				oA.innerHTML = '展开';
+			} else {
+				oSpan.innerHTML = str;
+				oA.innerHTML = '收起';
+			}
+			onOff = !onOff;
+		};
+	};
+</script>
+</head>
+
+<body>
+
+	<p>
+		<span>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字,结束。</span>
+		<a href="javascript:;">收起</a>
+	</p>
+
+</body>
+</html>
