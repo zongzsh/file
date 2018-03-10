@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style>
+#tagBox{width:500px;margin:20px auto 0;border:1px solid #000;}
+#tagBox ul{margin:0;padding:0;}
+#tagBox li{list-style:none;float:left;padding:10px;margin:0 5px;font:14px "microsoft yahei";background:#ccc;cursor:pointer;transition:0.2s;}
+#tagBox li.on{color:#fff;background:red;}
+#tagBox li:hover{color:#fff;background:red;}
+#tagBox div{display:none;width:500px;height:250px;margin-top:10px;background:#eee;}
+.clearfix:after{content:'';display:block;clear:both;}
+.clearfix{zoom:1;}
+</style>
+<script>
+	window.onload = function () {
+		var tagBox = document.getElementById('tagBox');
+		var lis = tagBox.getElementsByTagName('li');
+		var divs = tagBox.getElementsByTagName('div');
+		var len = lis.length;
+		
+		for(var i=0;i<len;i++){
+			lis[i].index = i;
+			lis[i].onclick = function(){
+				for(var i=0;i<len;i++){
+					lis[i].className = '';	
+					divs[i].style.display = 'none';	
+				}
+				lis[this.index].className = 'on';	
+				divs[this.index].style.display = 'block';
+			}
+		}
+	};
+</script>
+</head>
+
+<body>
+	
+	<div id="tagBox">
+		<ul class="clearfix">
+			<li class="on">标签1</li>
+			<li>标签2</li>
+			<li>标签3</li>
+		</ul>
+		<div style="display:block;">内容1</div>
+		<div>内容2</div>
+		<div>内容3</div>
+	</div>
+
+</body>
+</html>
