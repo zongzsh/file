@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title></title>
+		<style>
+			*,body{margin:0;padding:0;color:#222222;}
+			body{font-size:14px;font-family:"microsoft yahei";}
+			.main{width:800px;margin:0 auto;}
+			.clearfix:after{content:'';display:block;clear:both;}
+			.clearfix{*zoom:1;}
+			ul{margin-top:20px;}
+			ul li{float:left;list-style:none;font:bold 18px/30px "microsoft yahei";}
+			.onoff1{width:62px;height:30px;}
+			.onoff1 input{display:none;}
+			.onoff1 label{display:block;border:1px solid #888;height:30px;border-radius:15px;transition:.3s;background:#cccccc;}
+			.onoff1 label span{color:#000;display:block;width:30px;height:30px;border-radius:50%;box-shadow:0px 0px 1px #333333;background:#fff;transition:.3s;}
+			.onoff1 input:checked + label{background:#14e014;}
+			.onoff1 input:checked + label span{transform:translateX(30px);box-shadow:none;}
+			
+			.onoff2{width:62px;height:30px;}
+			.onoff2 input{display:none;}
+			.onoff2 label{display:block;border:1px solid #888;height:30px;border-radius:15px;transition:.3s;background:#cccccc;}
+			.onoff2 label .move{display:block;width:30px;height:30px;border-radius:50%;box-shadow:0px 0px 1px #333333;background:#fff;transition:.3s;overflow:hidden;}
+			.onoff2 label .move span{display:block;width:62px;height:30px;}
+			.onoff2 label .move span em{float:left;width:50%;height:30px;text-align:center;font:bold 14px/30px "microsoft yahei";}
+			.onoff2 input:checked + label{background:#14e014;}
+			.onoff2 input:checked + label .move{transform:translateX(30px);box-shadow:none;}
+			.onoff2 input:checked + label .move span{transform:translateX(-30px);}
+			
+			.onoff3{width:70px;height:72px;margin-top:-20px;}
+			.onoff3 input{display:none;}
+			.onoff3 label{display:block;width:70px;height:72px;transition:.2s;background:url("off.jpg") no-repeat;cursor:pointer;}
+			.onoff3 input:checked + label{background:url("on.jpg") no-repeat;}
+			
+			.tips{font:bold 18px/30px "microsoft yahei";}
+		</style>
+	</head>
+	<body>
+		
+		<div class="main">
+			<!--开关开始-->
+			<ul>
+				<li>类型1（无文字提示）：</li>
+				<li>关&nbsp;&nbsp;</li>
+				<li>
+					<div class="onoff1">
+						<input type="checkbox" id="checkbox" />
+						<label for="checkbox">
+							<span></span>
+						</label>
+					</div>
+				</li>
+				<li>&nbsp;&nbsp;开</li>
+			</ul><br /><br /><br />
+			<!--开关结束-->
+			
+			<!--开关2开始-->
+			<ul>
+				<li>类型2（有文字提示）：</li>
+				<li>
+					<div class="onoff2">
+						<input type="checkbox" id="checkbox2" />
+						<label for="checkbox2">
+							<span class="move">
+								<span>
+									<em>on</em>
+		                  			<em>off</em>
+								</span>
+							</span>
+						</label>
+					</div>
+				</li>
+			</ul><br /><br /><br /><br />
+			<!--开关2结束-->
+			
+			<!--开关3开始-->
+			<ul>
+				<li>类型3（有图片样式）：</li>
+				<li>
+					<div class="onoff3">
+						<input type="checkbox" id="checkbox3" />
+						<label for="checkbox3"></label>
+					</div>
+				</li>
+			</ul><br /><br /><br /><br /><br /><br />
+			<!--开关3结束-->
+			<p class="tips">注：以上几种网页开关脱离了先前的JS制作方式，均为利用CSS3自行编写，样式还可根据需求在此交互基础上随意修改,较之以前的JS代码变得更简洁，PC端兼容IE9及以上和其他主流浏览器，移动端无兼容问题。</p>
+		</div>
+			
+	</body>
+</html>
